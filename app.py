@@ -309,6 +309,6 @@ elif menu == "Exportar":
     if df.empty:
         st.info("Sem dados para exportar.")
     else:
-       csv_bytes = df.to_csv(index=False, sep=";").encode("utf-8-sig")
+        csv_bytes = df.to_csv(index=False).encode("utf-8-sig")
         st.download_button("Baixar CSV", data=csv_bytes, file_name="rnc_export_v2_2.csv", mime="text/csv")
         st.caption("As fotos não vão no CSV (ficam no banco).")
