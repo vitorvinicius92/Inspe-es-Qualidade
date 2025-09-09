@@ -238,7 +238,7 @@ elif menu == "Consultar/Encerrar/Reabrir":
 
         st.markdown("---")
         if not df.empty:
-            sel_id = st.number_input("Ver RNC (ID)", min_value=int(df["id"].min()), max_value=int(df["id"].max()), value=int(df["id"].iloc[0"]), step=1)
+            sel_id = st.number_input("Ver RNC (ID)", min_value=int(df["id"].min()), max_value=int(df["id"].max()), value=int(df["id"].iloc[0]), step=1)
             if sel_id in df["id"].values:
                 row = df[df["id"] == sel_id].iloc[0].to_dict()
                 st.subheader(f"RNC #{int(row['id'])} — {row['titulo']} [{row['status']}]")
